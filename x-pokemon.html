@@ -16,7 +16,11 @@
 
 <polymer-element name="x-pokemon" attributes="name">
     <template>
-        <img class="pokemon" alt="{{name}}" src="http://img.pokemondb.net/artwork/{{name | toLowerCase}}.jpg">
+        <img class="pokemon"
+          alt="{{name}}"
+          src="http://img.pokemondb.net/artwork/{{name | toLowerCase}}.jpg"
+          onerror="this.style.display='none'"
+          onload="this.style.display='block'">
     </template>
     <script>
         Polymer('x-pokemon', {
